@@ -1,0 +1,17 @@
+<h1 class="m-3">My tasks</h1>
+
+
+<% @all_tasks.each do |task| %>
+  <div class="input-group-text mb-3 mx-3">
+    <% if task.completed %>
+        <input class="form-check-input mt-0 mx-2" type="checkbox" value="" checked aria-label="Checkbox for following text input">
+    <% else %>
+      <input class="form-check-input mt-0 mx-2" type="checkbox" value="" aria-label="Checkbox for following text input">
+    <% end %>
+    <%= link_to task.title.capitalize, task_path(task), class: 'text-decoration-none text-muted '%></li>
+  </div>
+<% end %>
+
+<br>
+
+<%= link_to "Add a new task", tasks_new_path, class: 'm-3 text-decoration-none' %>

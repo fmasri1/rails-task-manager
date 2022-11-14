@@ -1,0 +1,14 @@
+<h1 class="m-3"><%= @task.title.capitalize %> </h1>
+
+<div class="p-2 m-3 bg-warning bg-opacity-50 rounded">
+  <h4> <%= "#{@task.details.capitalize}." %> </h4>
+</div>
+
+
+<br>
+
+<p> <%= link_to 'Edit task', edit_path(@task), class: 'm-3 text-decoration-none'%> </p>
+
+<p> <%= link_to 'Remove task', task_path(@task), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class: 'm-3 text-decoration-none'%> </p>
+
+<p><%= link_to "Back to list", tasks_path, class: 'm-3 text-decoration-none' %></p>
